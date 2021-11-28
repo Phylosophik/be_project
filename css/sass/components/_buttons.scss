@@ -1,0 +1,115 @@
+%After{
+    content: '';
+        position: absolute;
+}
+
+%Before{
+    @extend %After;
+    bottom: -10%;
+    left: 0;
+    height: 30%;
+    width: 100%;
+    transform: skewY(-10deg);
+    z-index: 98;
+}
+%content{
+    @extend %After;
+    position: absolute;
+    font-family: "Font Awesome 6 Free";
+    content: '\f010';
+    font-weight: 900;
+    font-size: 40px;
+    color: #333;
+    top: 50%;
+    left:80px;
+    right: 80px;
+    text-align: center;
+    color: $whitecolor;
+    text-transform: lowercase;
+    letter-spacing: 1;
+}
+%padding-footer{
+    padding-top: 160px;
+    padding-bottom: 100px;
+    padding-left: 50px;
+}
+
+%overlay{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba($therdColor,.6);
+}
+
+.friendly{
+    .template{
+        .act{
+            z-index: 1000;
+            @include prefexer(animation,show-hide 1s  linear both  ,webkit moz o ms);
+        }
+    }
+    
+}
+
+.act1{
+    background-color: $mainColor;
+}
+
+
+.active{
+    background-color:  #faac2d;
+    &::after{
+       @extend %After;
+        top: 0;
+        left: 0;
+        height: 90%;
+        width: 100%;
+        background-color:   #e9940d;
+        @include prefexer(transition,$transition,webkit moz o);
+    }
+}
+
+.boto{
+    width: 250px;
+    border: 2px solid $whitecolor;
+    background-color: transparent;
+    padding:8px 10px;
+    color: $whitecolor;
+    font-size: $mainSize;
+    cursor: pointer;
+    @include prefexer(animation,$transition,webkit moz o ms);
+    &:hover{
+        color: $mainColor;
+        border-color: $mainColor;
+    }
+}
+
+.btn.botn{
+    border:1px solid $whitecolor;
+    width: 100px;
+    padding:10px ;
+    font-size: 20px;
+    cursor: pointer;
+    @include prefexer(transition,$transition,webkit moz o ms);
+    &:hover{
+        color:$whitecolor;
+        border: 1px solid $whitecolor;
+        background-color: $mainColor;
+    }
+    @include minMedia{
+        display: block;
+        margin:40px auto;
+    }
+}
+.title{
+    width: fit-content;
+    margin: 0px auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

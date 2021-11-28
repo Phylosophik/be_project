@@ -1,0 +1,73 @@
+.home{
+    height: 100vh;
+    background-image: url('/images/header.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    .header{
+        margin-top: -8px;
+       .container{
+           display: flex;
+           justify-content: space-between;
+        .logo{
+            a{
+                font-size: 100px;
+                height: 80px;
+                display: flex;
+                align-items: center;
+                @include minMedia{
+                    font-size: 50px;
+                }
+            }
+        }
+        #mainmenu{
+        .navba{
+            position: relative;
+            z-index: 9999999999999;
+            li{
+                position: relative;
+                @include prefexer(transition,.1s ease-out,webkit moz o);
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 0%;
+                        width: 100%;
+                        background-color: $mainColor;
+                        opacity: 0;
+                        @include prefexer(transition,$transition,webkit moz o);
+                        @include minMedia{
+                            width: 100%;
+                        }
+                    }
+                    &:hover::before{
+                        background-color: #e9940d;
+                        opacity: 1;
+                        height: 90%;
+                    }
+                    &:hover{
+                        background-color:#faac2d;
+                    }
+                a{
+                    position: relative;
+                    z-index: 99999;
+                    font:{
+                        size:$mainSize ;
+                    }
+                    color: $whitecolor;
+                    height: 115px;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 30px;
+                    @include maxMedia{
+                        padding: 0 25px;
+                    }
+                }
+             }
+            }
+        }
+    }
+} 
+} 
+
+

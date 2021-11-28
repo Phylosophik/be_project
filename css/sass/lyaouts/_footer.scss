@@ -1,0 +1,48 @@
+// start footer
+.footer{
+    display: flex;
+    justify-content: space-between;
+    @include minMedia{
+        flex-direction: column;
+    }
+    .left-footer{
+        text-align: center;
+        color: $whitecolor;
+        @extend %padding-footer;
+        background-image: url('/images/footer-bg.jpg');
+        background-size: cover;
+            width: 50%;
+            @include minMedia{
+                width: 100%;
+                text-align: center;
+            }    
+        
+        i{
+            padding: 10px;
+            margin: 10px;
+            font-size: 40px;
+            display: inline-block;
+            text-align: center;
+            align-items: center;
+            border: 1px solid $whitecolor;
+            border-radius: 50%;
+            @include minMedia{
+                font-size: 20px;
+                margin: auto;
+            }
+
+        }
+    }
+    .right-footer{
+        background-color: $mainColor;
+        @extend %padding-footer;
+        color: $whitecolor;
+        
+        width: 50%;
+        @include minMedia{
+            width: 100%;
+        text-align: start;
+        }
+        }
+}
+// end footer
